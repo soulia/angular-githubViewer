@@ -14,7 +14,7 @@ git add .
 
 git status
 
-git commit -m 'initial file commit'
+git commit -m "initial file commit"
 
 git push origin master   - or git push
 
