@@ -1,0 +1,38 @@
+<!--Truthiness - if a var user is undefined, then if(user) is false -->
+<!--<div ng-show="user">-->
+<div>
+	<h3>Name: {{user.name}}</h3>
+	<br/>
+	<div>Item description: {{item.description}}</div>
+	<div>Item value: {{item.value}}</div>
+	<div>
+		<!--<img ng-src="{{item.imageSrc}}" title="{{item.description}}" />-->
+		<img ng-src="{{user.avatar_url}}" title="{{user.name}}">
+	</div>
+	Order:
+	<select ng-model="repoSortOrder">
+		<option value="+name">Name</option>
+		<option value="-stargazers_count">Stars</option>
+		<option value="+language">Language</option>
+	</select>
+
+</div>
+</div>
+
+<!--<table ng-hide="!user">	-->
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Stars</th>
+			<th>Language</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="repo in repos | orderBy:repoSortOrder">
+			<td>{{repo.name}}</td>
+			<td>{{repo.stargazers_count | number}}</td>
+			<td>{{repo.language}}</td>
+		</tr>
+	</tbody>
+</table>
