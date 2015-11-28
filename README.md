@@ -8,8 +8,13 @@ http://stackoverflow.com/questions/7704480/why-does-git-commit-not-save-my-chang
 git Changes not staged for commit
 --> git commit -a -m 'comments here'
 
-git add .    - or git add myNewFile.txt
+git add .    
+   - or git add myNewFile.txt 
+   - or git add -A   - for all changed files
+
 git status
+
 git commit -m 'initial file commit'
+
 git push origin master   - or git push
 
