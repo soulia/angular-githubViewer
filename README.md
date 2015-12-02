@@ -7,6 +7,8 @@ http://stackoverflow.com/questions/7704480/why-does-git-commit-not-save-my-chang
 https://www.youtube.com/watch?v=0fKg7e37bQE  - another github howto
 https://www.youtube.com/watch?v=oFYyTZwMyAg  - git branch info
 
+esc :wq
+
 git clone [repo url]
 
 git pull
