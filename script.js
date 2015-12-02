@@ -4,7 +4,7 @@
 
     var app = angular.module("githubViewer", []);
 
-    var MainController = function($scope, $http, $interval, $log) {
+    var MainController = function($scope, $http, $interval, $log, $anchorScroll, $location) {
 
         var onError = function(reason) {
             $scope.error = "Fail!";
@@ -18,6 +18,8 @@
 
         var onRepos = function(response) {
             $scope.repos = response.data;
+            $location.hash("userDetails");
+            $anchorScroll;
             //  console.log("repos: " + response.data);
         };
 
