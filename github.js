@@ -20,9 +20,30 @@
             });
       };
       
+      // https://api.github.com/repos/angular/angular.js
+      // https://api.github.com/repos/angular/angular.js/contributors
+      
+      var getRepoDetails = function(username, reponame){
+          
+          var repo;   // returns Repo details + contributors
+          var repoUrl = "https://api.github.com/repos/" + username + "/" + reponame;
+          
+          return $http.get(repoUrl)
+            .then(function(response) {
+                repo = response.data;
+                return $http.get(repoUrl + "/contributors");
+            })
+            .then(function(response){
+                repo.contributors = response.data;
+                return repo;
+            });
+          
+      };
+      
       return {
           getUser: getUser,
-          getRepos: getRepos
+          getRepos: getRepos,
+          getRepoDetails: getRepoDetails
       };
         
     };
